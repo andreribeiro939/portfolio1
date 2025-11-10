@@ -29,15 +29,14 @@
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experiência</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Formação</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Habilidades</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#dashboard">Dashboard Power BI</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interesses</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#dashboard">Dashboard Power BI</a></li>
         </ul>
       </div>
     </nav>
 
     <!-- Conteúdo -->
     <div class="container-fluid p-0">
-
       <!-- Sobre -->
       <section class="resume-section" id="about">
         <div class="resume-section-content">
@@ -155,7 +154,6 @@
             <li class="list-inline-item"><i class="fab fa-python"></i></li>
             <li class="list-inline-item"><i class="fas fa-database"></i></li>
             <li class="list-inline-item"><i class="fab fa-microsoft"></i></li>
-            <li class="list-inline-item"><i class="fab fa-windows"></i></li>
             <li class="list-inline-item"><i class="fab fa-html5"></i></li>
             <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
             <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
@@ -174,17 +172,6 @@
 
       <hr class="m-0" />
 
-      <!-- Dashboard Power BI -->
-      <section class="resume-section" id="dashboard">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Dashboard Power BI</h2>
-          <p>Visualização interativa criada para análise de desempenho e acompanhamento de indicadores de uma rede de farmácias.</p>
-          <iframe title="BI CLOSE-UP DROGARIA" width="100%" height="600" src="https://app.powerbi.com/reportEmbed?reportId=4f03e9b1-2b7f-4e64-8da8-ca29d6dfe7af&autoAuth=true&ctid=e13668d9-2524-41a1-888a-862b8aa8a689" frameborder="0" allowFullScreen="true"></iframe>
-        </div>
-      </section>
-
-      <hr class="m-0" />
-
       <!-- Interesses -->
       <section class="resume-section" id="interests">
         <div class="resume-section-content">
@@ -193,9 +180,121 @@
           <p class="mb-0">Nos momentos livres, gosto de praticar esportes, viajar e aprender novas ferramentas voltadas à ciência de dados e visualização de informações.</p>
         </div>
       </section>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
-</html>
+      <hr class="m-0" />
+
+<!-- Dashboard Power BI -->
+<section class="resume-section" id="dashboard">
+  <div class="resume-section-content">
+    <h2 class="mb-5 text-start">Dashboard Power BI</h2>
+
+    <style>
+      .bi-wrapper {
+        width: 320px;
+        margin: 0 auto 30px auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        background-color: #fff;
+      }
+
+      .bi-wrapper:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+      }
+
+      .bi-card {
+        position: relative;
+        width: 100%;
+        height: 320px; /* mantém o formato quadrado */
+        overflow: hidden;
+      }
+
+      .bi-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 🔥 garante que a imagem se ajuste perfeitamente ao quadrado */
+        object-position: center; /* centraliza o corte */
+        transition: transform 0.4s ease, filter 0.4s ease;
+        display: block;
+      }
+
+      .bi-wrapper:hover .bi-card img {
+        transform: scale(1.1);
+        filter: brightness(70%);
+      }
+
+      .bi-card::after {
+        content: "\f201"; /* ícone gráfico (Power BI) */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        color: #f2c811;
+        font-size: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+        transition: all 0.4s ease;
+        pointer-events: none;
+      }
+
+      .bi-wrapper:hover .bi-card::after {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      .bi-description {
+        background: #fff;
+        padding: 15px 18px;
+        text-align: justify;
+        transition: background 0.3s ease;
+      }
+
+      .bi-description h5 {
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+
+      .bi-wrapper:hover .bi-description {
+        background: #fafafa;
+      }
+
+      @media (max-width: 768px) {
+        .bi-wrapper {
+          width: 260px;
+        }
+        .bi-card {
+          height: 260px;
+        }
+      }
+    </style>
+
+    <div class="text-center">
+      <a
+        href="https://app.powerbi.com/view?r=eyJrIjoiM2VmZWQyOTAtYjAzZC00NDVlLTg3N2EtMGU0YTFlMDFmY2VhIiwidCI6ImUxMzY2OGQ5LTI1MjQtNDFhMS04ODhhLTg2MmI4YWE4YTY4OSJ9"
+        target="_blank"
+        title="Abrir Dashboard completo no Power BI"
+        style="text-decoration: none; color: inherit;"
+      >
+        <div class="bi-wrapper">
+          <div class="bi-card">
+            <!-- Miniatura quadrada ajustável -->
+            <img src="assets/img/farmacia1.jpg" alt="Miniatura do Dashboard Power BI" />
+          </div>
+          <div class="bi-description">
+            <h5 class="text-start">Dashboard de Análise de Vendas e Desempenho</h5>
+            <p class="text-muted mb-0">
+              Painel desenvolvido no Power BI para acompanhamento de indicadores de vendas,
+              margem de lucro e comportamento de produtos. Facilita a análise de resultados e
+              oferece visualização interativa dos principais KPIs de desempenho comercial.
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
