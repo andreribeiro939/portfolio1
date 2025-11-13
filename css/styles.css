@@ -10970,3 +10970,94 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+/* ======== PROJETOS (Miniatura de PDF) ======== */
+.bi-wrapper {
+  width: 100%;
+  max-width: 340px; /* limite em telas grandes */
+  margin: 0 auto 30px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.bi-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Mantém o formato quadrado automático */
+.bi-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.bi-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  display: block;
+}
+
+.bi-wrapper:hover .bi-card img {
+  transform: scale(1.1);
+  filter: brightness(70%);
+}
+
+/* Ícone do PDF ao passar o mouse */
+.bi-card::after {
+  content: "\f1c1"; /* Ícone de PDF */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #e63946;
+  font-size: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.bi-wrapper:hover .bi-card::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.bi-description {
+  background: #fff;
+  padding: 15px 18px;
+  text-align: justify;
+  transition: background 0.3s ease;
+}
+
+.bi-description h5 {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.bi-wrapper:hover .bi-description {
+  background: #fafafa;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+  .bi-wrapper {
+    max-width: 90%;
+  }
+
+  .bi-card::after {
+    font-size: 45px;
+  }
+
+  .bi-description {
+    padding: 12px 14px;
+  }
+}

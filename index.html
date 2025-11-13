@@ -11,6 +11,58 @@
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+
+      .resume-section {
+        padding: 3rem 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .resume-section {
+          padding: 2rem 1rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .subheading {
+          font-size: 0.95rem;
+        }
+
+        .social-icons a {
+          margin: 0 6px;
+        }
+      }
+
+      /* ======== PROJETOS (visualização PDF) ======== */
+      .pdf-viewer {
+        width: 100%;
+        height: 800px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease;
+      }
+
+      .pdf-viewer:hover {
+        transform: scale(1.01);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      }
+
+      @media (max-width: 768px) {
+        .pdf-viewer {
+          height: 500px;
+        }
+      }
+    </style>
   </head>
 
   <body id="page-top">
@@ -30,7 +82,7 @@
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Formação</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Habilidades</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interesses</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#dashboard">Dashboard Power BI</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projetos</a></li>
         </ul>
       </div>
     </nav>
@@ -49,8 +101,11 @@
             <a href="mailto:andre.hpop@gmail.com">andre.hpop@gmail.com</a>
           </div>
           <p class="lead mb-5">
-            Engenheiro Civil e pesquisador em Modelagem Computacional, com experiência em análise de dados, criação de dashboards em Power BI, automação em Python e manipulação de dados com SQL. 
-            Busco unir raciocínio técnico e visão analítica para transformar dados em decisões estratégicas.
+            Sou um entusiasta da tecnologia e da análise de dados, movido pela curiosidade em compreender como a combinação entre lógica e computação pode revelar padrões escondidos nos números e transformar dados em conhecimento aplicado. <br><br>
+
+            Busco aplicar conceitos de estatística, modelagem computacional e programação, aliados a ferramentas como Python, SQL e Power BI, para desenvolver soluções inteligentes voltadas à engenharia e à gestão de informações. Tenho interesse especial em áreas como Data Analytics, Machine Learning e automação de processos, sempre com foco em extrair o máximo valor dos dados. <br><br>
+
+            Acredito que a análise só se completa quando é bem comunicada. Por isso, dedico atenção especial à criação de dashboards e visualizações claras — afinal, uma boa apresentação de dados pode traduzir complexidade em decisões rápidas e estratégicas.
           </p>
           <div class="social-icons">
             <a class="social-icon" href="https://www.linkedin.com/in/andr%C3%A9-silveira-707668119/"><i class="fab fa-linkedin-in"></i></a>
@@ -183,113 +238,43 @@
 
       <hr class="m-0" />
 
-<!-- Dashboard Power BI -->
-<section class="resume-section" id="dashboard">
+<!-- Projetos -->
+<section class="resume-section" id="projetos">
   <div class="resume-section-content">
-    <h2 class="mb-5 text-start">Dashboard Power BI</h2>
+    <h2 class="mb-5 text-start">Projetos</h2>
 
-    <style>
-      .bi-wrapper {
-        width: 320px;
-        margin: 0 auto 30px auto;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-        background-color: #fff;
-      }
+    <div class="projects-container d-flex flex-wrap justify-content-center gap-4">
 
-      .bi-wrapper:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
-      }
-
-      .bi-card {
-        position: relative;
-        width: 100%;
-        height: 320px; /* mantém o formato quadrado */
-        overflow: hidden;
-      }
-
-      .bi-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* 🔥 garante que a imagem se ajuste perfeitamente ao quadrado */
-        object-position: center; /* centraliza o corte */
-        transition: transform 0.4s ease, filter 0.4s ease;
-        display: block;
-      }
-
-      .bi-wrapper:hover .bi-card img {
-        transform: scale(1.1);
-        filter: brightness(70%);
-      }
-
-      .bi-card::after {
-        content: "\f201"; /* ícone gráfico (Power BI) */
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900;
-        color: #f2c811;
-        font-size: 60px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8);
-        transition: all 0.4s ease;
-        pointer-events: none;
-      }
-
-      .bi-wrapper:hover .bi-card::after {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-      }
-
-      .bi-description {
-        background: #fff;
-        padding: 15px 18px;
-        text-align: justify;
-        transition: background 0.3s ease;
-      }
-
-      .bi-description h5 {
-        margin-bottom: 8px;
-        font-weight: 700;
-      }
-
-      .bi-wrapper:hover .bi-description {
-        background: #fafafa;
-      }
-
-      @media (max-width: 768px) {
-        .bi-wrapper {
-          width: 260px;
-        }
-        .bi-card {
-          height: 260px;
-        }
-      }
-    </style>
-
-    <div class="text-center">
-      <a
-        href="https://app.powerbi.com/view?r=eyJrIjoiM2VmZWQyOTAtYjAzZC00NDVlLTg3N2EtMGU0YTFlMDFmY2VhIiwidCI6ImUxMzY2OGQ5LTI1MjQtNDFhMS04ODhhLTg2MmI4YWE4YTY4OSJ9"
-        target="_blank"
-        title="Abrir Dashboard completo no Power BI"
-        style="text-decoration: none; color: inherit;"
-      >
+      <!-- Projeto 1 - PDF Portfólio -->
+      <a href="pdf/ONEPAGE.PDF" target="_blank" style="text-decoration: none; color: inherit;">
         <div class="bi-wrapper">
           <div class="bi-card">
-            <!-- Miniatura quadrada ajustável -->
-            <img src="assets/img/farmacia1.jpg" alt="Miniatura do Dashboard Power BI" />
+            <img src="assets/img/pdf-thumb.jpg" alt="Miniatura do Projeto PDF" />
           </div>
           <div class="bi-description">
-            <h5 class="text-start">Dashboard de Análise de Vendas e Desempenho</h5>
+            <h5 class="text-start">Análise de Indicadores de Produtividade</h5>
             <p class="text-muted mb-0">
-              Painel desenvolvido no Power BI para acompanhamento de indicadores de vendas,
-              margem de lucro e comportamento de produtos. Facilita a análise de resultados e
-              oferece visualização interativa dos principais KPIs de desempenho comercial.
+              Projeto voltado à análise consolidada de indicadores de produtividade e desempenho operacional.
+              O estudo aplica técnicas de análise e visualização de dados para otimização de processos internos,
+              padronização de rotinas e redução de custos e riscos. Após dois meses, os índices de conformidade
+              subiram de 50% para 95%, evidenciando ganhos em eficiência e segurança operacional.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Projeto 2 - Colab -->
+      <a href="https://colab.research.google.com/drive/1TnHM89jzTME_guG2OHepTOqkLu_WCSXi?usp=sharing" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="bi-wrapper">
+          <div class="bi-card">
+            <img src="assets/img/colab-thumb.jpg" alt="Miniatura do Projeto Colab" />
+          </div>
+          <div class="bi-description">
+            <h5 class="text-start">Previsão de Séries Temporais</h5>
+            <p class="text-muted mb-0">
+              Projeto desenvolvido em Google Colab utilizando técnicas de Previsão de Séries Temporais
+              para estimar o consumo futuro de energia elétrica. A análise envolve tratamento de dados históricos,
+              modelagem estatística e uso de bibliotecas Python para prever tendências e apoiar decisões estratégicas.
             </p>
           </div>
         </div>
